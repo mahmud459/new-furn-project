@@ -1,0 +1,40 @@
+
+/* start hero stales --------=============== */
+.home_bg_container {
+    background-color: var(--secondery-color);
+    height: calc(50vh + 200px);
+    width: 85%;
+    right: 0;
+    z-index: -1;
+  }
+  
+  @media (min-width: 768px) {
+    .hero_bg_img {
+      background-image: url(https://cdn.pixabay.com/photo/2016/08/26/15/06/home-1622401_1280.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      left: 0;
+      /* right: 100px; */
+      z-index: 0;
+      height: calc(50vh + 100px);
+      width: calc(100% - 3.5rem);
+    }
+  }
+
+  .prodect_hero_header h1{
+    text-transform: uppercase;
+    margin-left:70px;
+    margin-top: 50px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 70px;
+  }
+  
+
+  
+  
+  
+ 
+  
