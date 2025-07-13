@@ -14,7 +14,7 @@ const LoginForm = () => {
                 <p>Enter Login details to get access</p>
               </div>
 
-              {/* Input Fields */}
+              {/* Input Fields ---- */}
               <div className={styles.inputBox}>
                 <div className={styles.singleInputField}>
                   <label>Username or Email Address</label>
