@@ -181,6 +181,9 @@ function Footer() {
           </div>
         </div>
       </div>
+      <a href="#top" className={styles.scroll_top}>
+        <i className="fa-solid fa-angle-up"></i>
+      </a>
     </section>
   );
 }

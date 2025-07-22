@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import styles from '../Home/home.module.css';
 import { useCart } from '../context/CartContext'; // ✅ Import cart context
 
-function CardSubmenu({ showCart }) {
+function CardSubmenu({ showCart, onClose  }) {
   const {
     cart,
     addToCart,
@@ -14,6 +15,17 @@ function CardSubmenu({ showCart }) {
 
   return (
     <div className={styles.cart_submenu}>
+      {/* ✅ Close button */}
+      <div className="d-flex justify-content-start p-2">
+        <button
+          onClick={onClose}
+          className="btn btn-sm btn-outline-danger"
+          style={{ fontSize: '1.2rem', lineHeight: '1' }}
+        >
+          &times;
+        </button>
+      </div>
+
       {/* Cart items */}
       <div className={styles.cart_wrapper_item}>
         {cart.length === 0 ? (
@@ -37,7 +49,6 @@ function CardSubmenu({ showCart }) {
                     <p className={styles.new_price}>${item.price}</p>
                   </div>
 
-                  {/* Quantity Controls */}
                   <div className="d-flex align-items-center gap-2 mt-2">
                     <button
                       onClick={() => decreaseQuantity(item.id)}
@@ -50,14 +61,12 @@ function CardSubmenu({ showCart }) {
                       onClick={() => addToCart(item)}
                       className="btn btn-sm btn-outline-secondary px-2"
                     >
-                        <span>+</span>
-                      
+                      <span>+</span>
                     </button>
                   </div>
                 </div>
               </div>
 
-              {/* Remove item button */}
               <span
                 className={styles.close_btn}
                 onClick={() => removeFromCart(item.id)}
@@ -82,18 +91,20 @@ function CardSubmenu({ showCart }) {
           </h5>
 
           <div className={styles.cart_btn}>
-            <a
-              href="cart.html"
+            <Link
+              to="/CartPage"
               className={`${styles.shop_btn} ${styles.view_btn}`}
+              onClick={onClose} // 👈 Optional: close cart on navigation
             >
               View Cart
-            </a>
-            <a
-              href="checkout.html"
+            </Link>
+            <Link
+              to="/Checkout"
               className={`${styles.shop_btn} ${styles.checkout_btn}`}
+              onClick={onClose} // 👈 Optional: close cart on navigation
             >
               Checkout Now
-            </a>
+            </Link>
           </div>
         </div>
       )}

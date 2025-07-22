@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
 // 1. Create the context to hold cart data and actions
-const CartContext = createContext();
+export const CartContext = createContext();
 
 // 2. Export a custom hook to easily access the cart context
 export const useCart = () => useContext(CartContext);
@@ -26,9 +26,23 @@ export const CartProvider = ({ children }) => {
           p.id === item.id ? { ...p, quantity: p.quantity + 1 } : p
         );
       }
-      return [...prev, { ...item, quantity: 1 }];
+      return [...prev, { ...item, quantity: 1, comments: [] }]; 
     });
   };
+
+  // add coments ✍ 
+  // const addCommentToProduct = (productId, newComment) => {
+  //   setCart(prevItems =>
+  //     prevItems.map(item =>
+  //       item.id === productId
+  //         ? {
+  //             ...item,
+  //             comments: item.comments ? [...item.comments, newComment] : [newComment],
+  //           }
+  //         : item
+  //     )
+  //   );
+  // };
 
   // ➖ Decrease quantity (not below 1)
   const decreaseQuantity = (id) => {
@@ -65,6 +79,7 @@ export const CartProvider = ({ children }) => {
         decreaseQuantity,
         showCart,
         toggleCart,
+        // addCommentToProduct,
       }}
     >
       {children}

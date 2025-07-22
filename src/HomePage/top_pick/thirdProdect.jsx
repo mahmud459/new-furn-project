@@ -38,7 +38,7 @@ function ThirdProducts() {
 
     return (
         <section id="products" className={styles.product_section}>
-            <div className={`${styles.section_heading} container w-50`}>
+            <div className={`${styles.section_heading} container`}>
                 <h1 className="text-center">Products you may like</h1>
                 <p className="text-center mt-4 pb-5">
                     Suspendisse varius enim in eros elementum tristique. Duis cursus, mi

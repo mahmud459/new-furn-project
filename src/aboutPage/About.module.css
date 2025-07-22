@@ -1,13 +1,14 @@
 /* start hero stales --------=============== */
 .home_bg_container {
   background-color: var(--secondery-color);
-  height: calc(50vh + 200px);
+  height: calc(70vh + 200px);
   width: 85%;
   right: 0;
   z-index: -1;
 }
 
-@media (min-width: 768px) {
+
+@media (min-width: 992px) {
   .hero_bg_img {
     background-image: url(https://cdn.pixabay.com/photo/2017/08/07/08/58/house-2601655_1280.jpg);
     background-position: center;
@@ -16,14 +17,34 @@
     left: 0;
     /* right: 100px; */
     z-index: 0;
-    height: calc(50vh + 100px);
+    height: calc(70vh + 100px);
     width: calc(100% - 3.5rem);
+  }
+}
+@media (max-width: 991px) {
+  .hero_bg_img {
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/07/08/58/house-2601655_1280.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    /* right: 100px; */
+    z-index: 0;
+    height: calc(70vh + 100px);
+    width: calc(100% );
+  }
+  .home_bg_container {
+    background-color: var(--secondery-color);
+    height: calc(70vh + 200px);
+    width: 85%;
+    right: 0;
+    z-index: -1;
   }
 }
 
 .prodect_hero_header h1 {
   text-transform: uppercase;
-  margin-left: 70px;
+  margin-left: 20px;
   margin-top: 50px;
   color: #fff;
   font-weight: bold;

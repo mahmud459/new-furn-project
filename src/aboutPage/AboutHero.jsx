@@ -1,8 +1,8 @@
 
 import React from "react";
 import styles from "./About.module.css";
-function HeroAbout() {
-    const pageTittle ='about'
+function HeroAbout({pageTitle = 'about'}) {
+  // pageTitle = pageTitle ;
   return (
     <section id="Hero" className="position-relative">
       <div
@@ -12,8 +12,8 @@ function HeroAbout() {
       <div
         className={`${styles.hero_bg_img} container-fluid position-relative ms-0  `}
       >
-        <div className={`${styles.prodect_hero_header} position-abslute d-flex align-items-center h-100 p-5`}>
-                <h1>{pageTittle}</h1>
+        <div className={`${styles.prodect_hero_header} position-abslute d-flex align-items-center h-100 `}>
+                <h1>{pageTitle}</h1>
         </div>
       </div>
     </section>

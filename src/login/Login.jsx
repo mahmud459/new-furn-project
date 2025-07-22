@@ -1,8 +1,12 @@
 import React from 'react';
 import styles from './LoginForm.module.css';
+import Navbar from '../HomePage/Home/Navbar';
+import Footer from '../HomePage/home-footer/Footer';
 
 const LoginForm = () => {
   return (
+    <>
+    <Navbar/>
     <div className={styles.loginFormArea}>
       <div className="container">
         <div className="row justify-content-center">
@@ -37,14 +41,19 @@ const LoginForm = () => {
 
               {/* Footer */}
               <div className={styles.loginFooter}>
-                <p>Don't have an account? <a href="register.html">Sign Up</a> here</p>
+                <p>Don't have an account? <a href="#">Sign Up</a> here</p>
                 <button className={styles.submitBtn}>Login</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div> 
+    <div>
+       <Footer/>
     </div>
+   
+    </>
   );
 };
 

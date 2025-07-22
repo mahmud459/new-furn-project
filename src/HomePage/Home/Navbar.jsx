@@ -9,7 +9,9 @@ import { useCart } from "../context/CartContext"; // ✅ use the shared cart
 
 function Navbar() {
   const { showCart, toggleCart, cart, removeFromCart } = useCart(); // ✅ get from context
-
+  const onClose = () => {
+    if (showCart) toggleCart(); // if it open  revers show statuse
+  };
   // navbar scroling
   const [showNavbar, setShowNavbar] = useState(true);
   const [LogoImg, setLogoImg] = useState(LogoImg1);
@@ -20,7 +22,7 @@ function Navbar() {
       if (y === 0) {
         setShowNavbar(true); // Show on top or after 800px
         setLogoImg(LogoImg1);
-      } else if (y >= 800) {
+      } else if (y >= 500) {
         setShowNavbar(true); // Show on top or after 800px
         setLogoImg(LogoImg2);
       } else {
@@ -38,14 +40,26 @@ function Navbar() {
         showNavbar ? styles.visible : styles.hidden
       }`}
     >
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg py-0">
         <div
           className={`${styles.nav_container} container-fluid ps-0 pe-lg-5 pe-sm-4`}
         >
           {/* Logo */}
           <div className={styles.logo_div}>
-            <a className="navbar-brand" href="#">
-              <img className="img-fluid" src={LogoImg} alt="logo" />
+            <a className="navbar-brand pt-0  me-0" href="#">
+              <img
+                className={`img-fluid`}
+                src={LogoImg}
+                alt="logo"
+                style={
+                  LogoImg === LogoImg2
+                    ? {
+                        padding: "2px 10px ", transition : '0.4s' , zIndex:'1'
+                        
+                      }
+                    : { padding: "0px" }
+                }
+              />
             </a>
           </div>
 
@@ -60,7 +74,7 @@ function Navbar() {
           </button>
 
           {/* Menu items */}
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className={`${styles.nav_content} collapse navbar-collapse `} id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink
@@ -84,55 +98,57 @@ function Navbar() {
               </li>
               <li className={styles.nav_pages}>
                 <a className="nav-link" href="#">
-                  pages
+                  Pages
                 </a>
                 <div className={styles.pages_supmenu}>
                   <span className={styles.arrw_to_top}>
-                    <i class="fa-solid fa-caret-up"></i>
+                    <i className="fa-solid fa-caret-up"></i>
                   </span>
                   <ul>
                     <li>
-                      <Link to="">login</Link>
+                      <Link to="/Login">Login</Link>
                     </li>
                     <li>
-                      {" "}
-                      <Link to="">card</Link>
+                      <Link to="/CartPage">Cart</Link>
                     </li>
                     <li>
-                      <Link to="">categories</Link>
+                      <Link to="/Categories">Categories</Link>
                     </li>
                     <li>
-                      {" "}
-                      <Link to="">checkout</Link>
+                      <Link to="/Checkout">Checkout</Link>
                     </li>
                     <li>
-                      {" "}
-                      <Link to="">prodect Details</Link>
+                      <Link to="/ProductDetails">Product Details</Link>
                     </li>
                   </ul>
                 </div>
               </li>
+
               <li className={styles.nav_blog}>
                 <a className="nav-link" href="#">
                   blog
                 </a>
                 <div className={styles.blog_supmenu}>
                   <span className={styles.arrw_to_top}>
-                    <i class="fa-solid fa-caret-up"></i>
+                    <i className="fa-solid fa-caret-up"></i>
                   </span>
                   <ul>
                     <li>
-                      <Link to="">blog</Link>
+                      <Link to="/blog">blog</Link>
                     </li>
                     <li>
-                      {" "}
-                      <Link to="">blog detailes</Link>
+                      <Link to="/blogDetailes">blog detailes</Link>
                     </li>
                     <li>
                       <Link to="">elemnts</Link>
                     </li>
                   </ul>
                 </div>
+              </li>
+              <li>
+                <Link className="nav-link" to="/contactUs">
+                  contact
+                </Link>
               </li>
             </ul>
 
@@ -151,9 +167,9 @@ function Navbar() {
             {/* Account + Cart */}
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/myAcount">
                   My Account
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a
@@ -184,6 +200,7 @@ function Navbar() {
         showCart={showCart}
         cart={cart}
         removeFromCart={removeFromCart}
+        onClose={onClose}
       />
     </header>
   );

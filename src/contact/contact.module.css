@@ -1,0 +1,29 @@
+
+.contact_section{
+    margin-top: 200px;
+}
+
+.contactInfo {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .contactIcon {
+    font-size: 24px;
+    color: #8f9195;
+    margin-top: 6px;
+  }
+  
+  .contactBody h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .contactBody p {
+    margin: 0;
+    color: #777;
+  }
+  

@@ -73,9 +73,9 @@ function Products() {
         <ProductList products={products} addToCart={addToCart} />
       </div>
 
-      <div className="container-fluid ps-0  py-5 mt-5">
+      <div className="container-fluid   py-5 mt-5">
         <div className="row">
-          <div className="col-md-7 pe-0">
+          <div className="col-md-7">
             <div className={styles.img_cont}>
               <img
                 className="img-fluid"
@@ -84,8 +84,8 @@ function Products() {
               />
             </div>
           </div>
-          <div className="col-md-5 ms-0 px-0">
-            <div className={styles.Product_right}>
+          <div className="col-md-5">
+            <div className={`${styles.Product_right} px-5 py-5`}>
               <h1>Best Furniture manufacturer</h1>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
