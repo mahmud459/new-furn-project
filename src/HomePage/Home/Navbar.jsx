@@ -5,6 +5,7 @@ import LogoImg2 from "./hom_imgs/logo2.png.webp";
 import CardSubmenu from "./CardSubmenu";
 import { Link, NavLink } from "react-router-dom";
 // import ProductsPage from "../../prodectsPage/ProdectsPage";
+import SearchInput from "../SearchProdect";
 import { useCart } from "../context/CartContext"; // ✅ use the shared cart
 
 function Navbar() {
@@ -54,8 +55,9 @@ function Navbar() {
                 style={
                   LogoImg === LogoImg2
                     ? {
-                        padding: "2px 10px ", transition : '0.4s' , zIndex:'1'
-                        
+                        padding: "2px 10px ",
+                        transition: "0.4s",
+                        zIndex: "1",
                       }
                     : { padding: "0px" }
                 }
@@ -74,7 +76,10 @@ function Navbar() {
           </button>
 
           {/* Menu items */}
-          <div className={`${styles.nav_content} collapse navbar-collapse `} id="navbarSupportedContent">
+          <div
+            className={`${styles.nav_content} collapse navbar-collapse `}
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink
@@ -153,16 +158,16 @@ function Navbar() {
             </ul>
 
             {/* Search */}
-            <form className="d-flex align-items-center me-3" role="search">
-              <input
-                className="form-control"
-                type="search"
-                placeholder="Search"
-              />
+            <form className="d-flex align-items-center me-3" role="search"
+            onSubmit={(e) => e.preventDefault()}
+            >
+              
+            <SearchInput />
               <button type="submit" className="btn ps-0">
                 <i className="fas fa-search fs-4"></i>
               </button>
             </form>
+           
 
             {/* Account + Cart */}
             <ul className="navbar-nav mb-2 mb-lg-0">

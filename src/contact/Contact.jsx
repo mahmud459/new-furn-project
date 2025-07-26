@@ -1,28 +1,34 @@
-import React from "react";
+
+import "aos/dist/aos.css";
 import styles from "./contact.module.css";
 import Navbar from "../HomePage/Home/Navbar";
 import HeroAbout from "../aboutPage/AboutHero";
 import MapComponent from "./MapContent";
 import ReviewForm from "../pages/prodect_detailes/CommentsForm";
 import Footer from "../HomePage/home-footer/Footer";
+
 function ContactUs() {
+
   return (
     <>
       <Navbar />
       <HeroAbout pageTitle="contact us" />
+
       <section className={styles.contact_section}>
-        <div className="container">
+        <div className="container" data-aos="fade-up">
           <MapComponent />
         </div>
+
         <div className="container mt-5">
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-8" data-aos="fade-right">
               <div className="mt-5">
                 <ReviewForm />
               </div>
             </div>
-            <div className="col-md-4 mt-5 ps-5">
-              <div className={styles.contactInfo}>
+
+            <div className="col-md-4 mt-5 ps-5" data-aos="fade-left">
+              <div className={styles.contactInfo} data-aos="zoom-in" data-aos-delay="100">
                 <span className={styles.contactIcon}>
                   <i className="fa-solid fa-house"></i>
                 </span>
@@ -32,7 +38,7 @@ function ContactUs() {
                 </div>
               </div>
 
-              <div className={styles.contactInfo}>
+              <div className={styles.contactInfo} data-aos="zoom-in" data-aos-delay="200">
                 <span className={styles.contactIcon}>
                   <i className="fa-solid fa-phone"></i>
                 </span>
@@ -42,7 +48,7 @@ function ContactUs() {
                 </div>
               </div>
 
-              <div className={styles.contactInfo}>
+              <div className={styles.contactInfo} data-aos="zoom-in" data-aos-delay="300">
                 <span className={styles.contactIcon}>
                   <i className="fa-solid fa-envelope"></i>
                 </span>

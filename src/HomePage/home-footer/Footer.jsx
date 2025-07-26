@@ -1,49 +1,50 @@
 import React from "react";
 import styles from "../Home/home.module.css";
+
 function Footer() {
   return (
     <section className={styles.footer_section}>
-      <div className={`${styles.Footer}  `}>
+      <div className={`${styles.Footer}`}>
         <div className="container py-5">
           <div className="row">
-            <div className="col-md-3 pt-5 ">
+            <div className="col-md-3 pt-5" data-aos="fade-up" data-aos-delay="0">
               <div className={styles.col_content}>
                 <img
                   className="img-fluid "
-                  src="	https://preview.colorlib.com/theme/furn/assets/img/icon/services1.svg"
+                  src="https://preview.colorlib.com/theme/furn/assets/img/icon/services1.svg"
                   alt=""
                 />
                 <h4>Fast & Free Delivery</h4>
                 <p>Lorem ipsum dolor sit amet.</p>
               </div>
             </div>
-            <div className="col-md-3 pt-5 ">
+            <div className="col-md-3 pt-5" data-aos="fade-up" data-aos-delay="150">
               <div className={styles.col_content}>
                 <img
                   className="img-fluid "
-                  src="	https://preview.colorlib.com/theme/furn/assets/img/icon/services2.svg"
+                  src="https://preview.colorlib.com/theme/furn/assets/img/icon/services2.svg"
                   alt=""
                 />
                 <h4>Secure Payment</h4>
                 <p>Lorem ipsum dolor sit amet.</p>
               </div>
             </div>
-            <div className="col-md-3 pt-5 ">
+            <div className="col-md-3 pt-5" data-aos="fade-up" data-aos-delay="300">
               <div className={styles.col_content}>
                 <img
                   className="img-fluid "
-                  src="	https://preview.colorlib.com/theme/furn/assets/img/icon/services3.svg"
+                  src="https://preview.colorlib.com/theme/furn/assets/img/icon/services3.svg"
                   alt=""
                 />
                 <h4>Money Back Guarantee</h4>
                 <p>Lorem ipsum dolor sit amet.</p>
               </div>
             </div>
-            <div className="col-md-3 pt-5 ">
+            <div className="col-md-3 pt-5" data-aos="fade-up" data-aos-delay="450">
               <div className={styles.col_content}>
                 <img
                   className="img-fluid "
-                  src="	https://preview.colorlib.com/theme/furn/assets/img/icon/services4.svg"
+                  src="https://preview.colorlib.com/theme/furn/assets/img/icon/services4.svg"
                   alt=""
                 />
                 <h4>24h sepport</h4>
@@ -57,7 +58,7 @@ function Footer() {
         <div className={styles.bottum_footer_bg}>
           <div className="container">
             <div className="row d-flex justify-content-around">
-              <div className="col-md-4">
+              <div className="col-md-4" data-aos="fade-right" data-aos-delay="200">
                 <div className={styles.footer_about}>
                   <a href="index.html" className={styles.logo}>
                     <img
@@ -92,7 +93,7 @@ function Footer() {
                 </div>
               </div>
 
-              <div className="col-md-2">
+              <div className="col-md-2" data-aos="fade-up" data-aos-delay="300">
                 <div className={styles.footer_links}>
                   <h4>Useful Links</h4>
                   <ul>
@@ -115,7 +116,7 @@ function Footer() {
                 </div>
               </div>
 
-              <div className="col-md-2">
+              <div className="col-md-2" data-aos="fade-up" data-aos-delay="400">
                 <div className={styles.footer_links}>
                   <h4>Our Services</h4>
                   <ul>
@@ -138,7 +139,7 @@ function Footer() {
                 </div>
               </div>
 
-              <div className="col-md-2">
+              <div className="col-md-2" data-aos="fade-up" data-aos-delay="500">
                 <div className={styles.footer_links}>
                   <h4>Hic solutasetp</h4>
                   <ul>
@@ -164,7 +165,11 @@ function Footer() {
           </div>
 
           {/* .copyright start ----------  */}
-          <div className={`${styles.copyright} container  text-center mt-5`}>
+          <div
+            className={`${styles.copyright} container  text-center mt-5`}
+            data-aos="zoom-in"
+            data-aos-delay="600"
+          >
             <p>
               © <strong className="sitename">FORN</strong> All Rights Reserved
             </p>
@@ -175,16 +180,17 @@ function Footer() {
               </a>
               <span>| Distributed by: </span>
               <a href="https://mahmud459.github.io/Medilab-Hospital/">
-              Mahmud Mari 
+                Mahmud Mari 
               </a>
             </div>
           </div>
         </div>
       </div>
-      <a href="#top" className={styles.scroll_top}>
+      <a href="#top" className={styles.scroll_top} data-aos="fade-up" data-aos-delay="700">
         <i className="fa-solid fa-angle-up"></i>
       </a>
     </section>
   );
 }
+
 export default Footer;

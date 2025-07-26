@@ -3,7 +3,11 @@ import styles from '../Home/home.module.css';
 
 function ProductCard({ product, addToCart }) {
   return (
-    <div className={`${styles.prodects_Card} card shadow border-0`}>
+    <div
+      className={`${styles.prodects_Card} card shadow border-0`}
+      data-aos="fade-up" // AOS animation
+      data-aos-duration="1000"
+    >
       <img
         src={product.image}
         className="card-img-top img-fluid"
@@ -15,7 +19,7 @@ function ProductCard({ product, addToCart }) {
         <p className="card-text text-muted">{product.description}</p>
         <p className="fw-bold">${product.price}</p>
         <button
-          className="btn "
+          className="btn"
           onClick={() => addToCart(product)}
         >
           Add to Cart

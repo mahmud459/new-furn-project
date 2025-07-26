@@ -38,12 +38,12 @@ function BlogComponents() {
       <Navbar />
       <HeroAbout pageTitle="blog" />
       <section className={styles.blog_content}>
-        <div className="container">
+        <div className="container" data-aos="fade-up" data-aos-duration="800">
           <div className="row justify-content-between g-4">
-            <div className="col-md-7">
+            <div className="col-md-7" data-aos="fade-right" data-aos-duration="800">
               <BlogStorey story_img="https://preview.colorlib.com/theme/furn/assets/img/blog/single_blog_1.png" />
             </div>
-            <div className="col-md-5 px-5 text-center">
+            <div className="col-md-5 px-5 text-center" data-aos="fade-left" data-aos-duration="800">
               <div className={styles.search_form}>
                 <form role="search">
                   <div className={styles.input_wrapper}>
@@ -93,42 +93,40 @@ function BlogComponents() {
             </div>
           </div>
         </div>
-        {/* second conrainer  */}
-        <div className={`${styles.blog_containers} container`}>
+        {/* second container  */}
+        <div className={`${styles.blog_containers} container`} data-aos="fade-up" data-aos-duration="800">
           <div className="row">
-            <div className="col-md-7">
+            <div className="col-md-7" data-aos="fade-right" data-aos-duration="800">
               <BlogStorey story_img="https://preview.colorlib.com/theme/furn/assets/img/blog/single_blog_2.png" />
             </div>
-            <div className="col-md-5 text-center">
-              <div className={styles}>
-                <aside className={styles.sidebarWidget}>
-                  <h3 className={`mb-5 ${styles.widgetTitle}`}>Recent Post</h3>
-                  {posts.map((post, index) => (
-                    <div className={styles.postItem} key={index}>
-                      <img src={post.img} alt="post" />
-                      <div className={styles.mediaBody}>
-                        <a href={post.link}>
-                          <h3>{post.title}</h3>
-                        </a>
-                        <p>{post.date}</p>
-                      </div>
+            <div className="col-md-5 text-center" data-aos="fade-left" data-aos-duration="800">
+              <aside className={styles.sidebarWidget}>
+                <h3 className={`mb-5 ${styles.widgetTitle}`}>Recent Post</h3>
+                {posts.map((post, index) => (
+                  <div className={styles.postItem} key={index}>
+                    <img src={post.img} alt="post" />
+                    <div className={styles.mediaBody}>
+                      <a href={post.link}>
+                        <h3>{post.title}</h3>
+                      </a>
+                      <p>{post.date}</p>
                     </div>
-                  ))}
-                </aside>
-              </div>
+                  </div>
+                ))}
+              </aside>
             </div>
           </div>
         </div>
 
         {/* third container  */}
-        <div className={`${styles.blog_containers} container`}>
+        <div className={`${styles.blog_containers} container`} data-aos="fade-up" data-aos-duration="800">
           <div className="row">
-            <div className="col-md-7">
+            <div className="col-md-7" data-aos="fade-right" data-aos-duration="800">
               <BlogStorey story_img="https://cdn.pixabay.com/photo/2016/01/09/18/27/camera-1130731_1280.jpg" />
             </div>
 
             {/* left  */}
-            <div className="col-md-5">
+            <div className="col-md-5" data-aos="fade-left" data-aos-duration="800">
               <aside className={styles.tagWidget}>
                 <h4 className={styles.widgetTitle}>Tag Clouds</h4>
                 <ul className={styles.tagList}>
@@ -158,7 +156,7 @@ function BlogComponents() {
                   </li>
                 </ul>
               </aside>
-              {/* aside tow  */}
+              {/* aside two  */}
               <aside className={styles.instagramWidget}>
                 <h4 className={styles.widgetTitle}>Instagram Feeds</h4>
                 <ul className={styles.instagramRow}>
@@ -222,15 +220,15 @@ function BlogComponents() {
           </div>
         </div>
 
-        {/* fourd container  */}
-        <div className={`${styles.blog_containers} container`}>
+        {/* fourth container  */}
+        <div className={`${styles.blog_containers} container`} data-aos="fade-up" data-aos-duration="800">
           <div className="row">
-            <div className="col-md-7">
+            <div className="col-md-7" data-aos="fade-right" data-aos-duration="800">
               <BlogStorey story_img="https://cdn.pixabay.com/photo/2016/07/30/00/03/winding-road-1556177_1280.jpg" />
             </div>
 
             {/* left  */}
-            <div className="col-md-5">
+            <div className="col-md-5" data-aos="fade-left" data-aos-duration="800">
               <aside className={styles.newsletterWidget}>
                 <h4 className={styles.widgetTitle}>Newsletter</h4>
                 <form action="#">
@@ -240,8 +238,6 @@ function BlogComponents() {
                       className={styles.input}
                       placeholder="Enter email"
                       required
-                    //   value={null}
-                    //   onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <button className={styles.subscribeBtn} type="submit">

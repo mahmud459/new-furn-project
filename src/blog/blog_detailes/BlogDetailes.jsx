@@ -1,4 +1,5 @@
-import React from "react";
+
+
 import styles from "../blog.module.css";
 import Navbar from "../../HomePage/Home/Navbar";
 import HeroAbout from "../../aboutPage/AboutHero";
@@ -6,6 +7,8 @@ import ReviewForm from "../../pages/prodect_detailes/CommentsForm";
 import Footer from "../../HomePage/home-footer/Footer";
 
 function BlogDetailes({ story_img }) {
+
+
   story_img =
     "https://cdn.pixabay.com/photo/2018/05/09/08/15/train-3384786_1280.jpg";
   const posts = [
@@ -34,6 +37,7 @@ function BlogDetailes({ story_img }) {
       link: "blog_details.html",
     },
   ];
+
   return (
     <>
       <Navbar />
@@ -42,8 +46,8 @@ function BlogDetailes({ story_img }) {
         <div className="container">
           <div className="row">
             <div className="col-md-8">
-              <div className={`pb-4 ${styles.blog_storey}`}>
-                <div className={`${styles.stores_img}`}>
+              <div className={`pb-4 ${styles.blog_storey}`} data-aos="fade-up">
+                <div className={`${styles.stores_img}`} data-aos="zoom-in">
                   <img className="img-fluid" src={story_img} alt="storey img" />
                   <div className={styles.small_div}>
                     <h2>15</h2>
@@ -51,7 +55,7 @@ function BlogDetailes({ story_img }) {
                   </div>
                 </div>
                 <div className="p-4">
-                  <div className={styles.stores_info}>
+                  <div className={styles.stores_info} data-aos="fade-left">
                     <h4>
                       <a href="#">
                         Second divided from form fish beast made every of seas
@@ -91,7 +95,7 @@ function BlogDetailes({ story_img }) {
                       ad, sint, pariatur iusto architecto voluptas.
                     </p>
 
-                    <div className={styles.boot_camp}>
+                    <div className={styles.boot_camp} data-aos="fade-up">
                       <div className={styles.insid_boot_camp}>
                         <p>
                           MCSE boot camps have its supporters and its
@@ -126,14 +130,13 @@ function BlogDetailes({ story_img }) {
               </div>
               <div className="row ">
                 <div className="col-md-12">
-                  <div className={styles.social_links}>
+                  <div className={styles.social_links} data-aos="fade-up">
                     <div>
                       <span>
                         <i className="fa-solid fa-heart"></i>
                       </span>
                       <span className="ms-2">Lily and 4 people like this</span>
                     </div>
-                    {/* sochial left  */}
                     <div className={styles.sochial_left}>
                       <span>
                         {" "}
@@ -160,13 +163,9 @@ function BlogDetailes({ story_img }) {
                         </a>
                       </span>
                     </div>
-
-                    {/* secod row  */}
-                    {/* ------  */}
                   </div>
                   <hr />
-                  {/* comments first */}
-                  <div className={styles.blogAuthor}>
+                  <div className={styles.blogAuthor} data-aos="fade-right">
                     <div className={`media d-flex align-items-center`}>
                       <img
                         src="https://preview.colorlib.com/theme/furn/assets/img/blog/author.png"
@@ -186,92 +185,31 @@ function BlogDetailes({ story_img }) {
                     </div>
                   </div>
                   <hr />
-                  <div className={styles}>
+                  <div className={styles} data-aos="fade-left">
                     <h4 className="mb-5">05 Comments</h4>
-                    <div className={styles.blogAuthor}>
-                      <div className={`media d-flex align-items-center`}>
-                        <img
-                          src="https://preview.colorlib.com/theme/furn/assets/img/blog/author.png"
-                          alt="Author"
-                          className={styles.authorImg}
-                        />
-                        <div className="media-body">
-                          <a href="#">
-                            <h4 className={styles.authorName}>Harvard Milan</h4>
-                          </a>
-                          <p className={styles.authorDesc}>
-                            Second divided from form fish beast made. Every of
-                            seas all gathered use saying you're, he our dominion
-                            twon Second divided from
-                          </p>
+                    {[...Array(5)].map((_, i) => (
+                      <div className={styles.blogAuthor} key={i} data-aos="fade-up" data-aos-delay={i * 100}>
+                        <div className={`media d-flex align-items-center`}>
+                          <img
+                            src="https://preview.colorlib.com/theme/furn/assets/img/blog/author.png"
+                            alt="Author"
+                            className={styles.authorImg}
+                          />
+                          <div className="media-body">
+                            <a href="#">
+                              <h4 className={styles.authorName}>Harvard Milan</h4>
+                            </a>
+                            <p className={styles.authorDesc}>
+                              Second divided from form fish beast made. Every of
+                              seas all gathered use saying you're, he our dominion
+                              twon Second divided from
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-
-                    {/* secund commit  */}
-                    <div className={styles.blogAuthor}>
-                      <div className={`media d-flex align-items-center`}>
-                        <img
-                          src="https://preview.colorlib.com/theme/furn/assets/img/blog/author.png"
-                          alt="Author"
-                          className={styles.authorImg}
-                        />
-                        <div className="media-body">
-                          <a href="#">
-                            <h4 className={styles.authorName}>Harvard Milan</h4>
-                          </a>
-                          <p className={styles.authorDesc}>
-                            Second divided from form fish beast made. Every of
-                            seas all gathered use saying you're, he our dominion
-                            twon Second divided from
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* third comment  */}
-                    <div className={styles.blogAuthor}>
-                      <div className={`media d-flex align-items-center`}>
-                        <img
-                          src="https://preview.colorlib.com/theme/furn/assets/img/blog/author.png"
-                          alt="Author"
-                          className={styles.authorImg}
-                        />
-                        <div className="media-body">
-                          <a href="#">
-                            <h4 className={styles.authorName}>Harvard Milan</h4>
-                          </a>
-                          <p className={styles.authorDesc}>
-                            Second divided from form fish beast made. Every of
-                            seas all gathered use saying you're, he our dominion
-                            twon Second divided from
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    {/* ford comment  */}
-                    <div className={styles.blogAuthor}>
-                      <div className={`media d-flex align-items-center`}>
-                        <img
-                          src="https://preview.colorlib.com/theme/furn/assets/img/blog/author.png"
-                          alt="Author"
-                          className={styles.authorImg}
-                        />
-                        <div className="media-body">
-                          <a href="#">
-                            <h4 className={styles.authorName}>Harvard Milan</h4>
-                          </a>
-                          <p className={styles.authorDesc}>
-                            Second divided from form fish beast made. Every of
-                            seas all gathered use saying you're, he our dominion
-                            twon Second divided from
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                     <hr />
-                    {/* comment form  */}
-                    <div className="mt-5">
+                    <div className="mt-5" data-aos="fade-up">
                       <ReviewForm />
                     </div>
                   </div>
@@ -279,10 +217,9 @@ function BlogDetailes({ story_img }) {
               </div>
             </div>
 
-            {/* left col in page  */}
+            {/* Sidebar */}
             <div className="col-md-4 text-center">
-              {/* first  */}
-              <div className={`${styles.search_form} mt-3`}>
+              <div className={`${styles.search_form} mt-3`} data-aos="fade-down">
                 <form role="search">
                   <div className={styles.input_wrapper}>
                     <i className="fa-solid fa-magnifying-glass"></i>
@@ -294,154 +231,71 @@ function BlogDetailes({ story_img }) {
                       aria-label="Search"
                     />
                   </div>
-
-                  <button
-                    className={`${styles.search_btn} btn mt-3 `}
-                    type="submit"
-                  >
+                  <button className={`${styles.search_btn} btn mt-3`} type="submit">
                     Search
                   </button>
                 </form>
               </div>
 
-              {/* second ----- */}
-              {/* cotagory  */}
-              <div className={styles.catagory_content}>
+              <div className={styles.catagory_content} data-aos="fade-left">
                 <h4 className="mb-5 fw-bold">Category</h4>
                 <ul className="list-unstyled">
-                  <li>
-                    <a href="#">Resaurant food 37</a>
-                  </li>
-                  <li>
-                    <a href="#">Travel news</a>
-                  </li>
-                  <li>
-                    <a href="#">Modern technology</a>
-                  </li>
-                  <li>
-                    <a href="#">Product</a>
-                  </li>
-                  <li>
-                    <a href="#">Inspiration</a>
-                  </li>
-                  <li>
-                    <a href="#">Health Care 27</a>
-                  </li>
+                  <li><a href="#">Resaurant food 37</a></li>
+                  <li><a href="#">Travel news</a></li>
+                  <li><a href="#">Modern technology</a></li>
+                  <li><a href="#">Product</a></li>
+                  <li><a href="#">Inspiration</a></li>
+                  <li><a href="#">Health Care 27</a></li>
                 </ul>
               </div>
 
-              {/* third----  */}
-              <div className={`${styles}`}>
-                <aside className={styles.sidebarWidget}>
-                  <h3 className={`mb-5 ${styles.widgetTitle}`}>Recent Post</h3>
-                  {posts.map((post, index) => (
-                    <div className={styles.postItem} key={index}>
-                      <img src={post.img} alt="post" />
-                      <div className={styles.mediaBody}>
-                        <a href={post.link}>
-                          <h3>{post.title}</h3>
-                        </a>
-                        <p>{post.date}</p>
-                      </div>
+              <aside className={styles.sidebarWidget} data-aos="fade-up">
+                <h3 className={`mb-5 ${styles.widgetTitle}`}>Recent Post</h3>
+                {posts.map((post, index) => (
+                  <div className={styles.postItem} key={index} data-aos="fade-left" data-aos-delay={index * 100}>
+                    <img src={post.img} alt="post" />
+                    <div className={styles.mediaBody}>
+                      <a href={post.link}>
+                        <h3>{post.title}</h3>
+                      </a>
+                      <p>{post.date}</p>
                     </div>
-                  ))}
-                </aside>
-              </div>
+                  </div>
+                ))}
+              </aside>
 
-              {/* ford ----  */}
-              <aside className={`mt-5 ${styles.tagWidget}`}>
+              <aside className={`mt-5 ${styles.tagWidget}`} data-aos="fade-up">
                 <h4 className={styles.widgetTitle}>Tag Clouds</h4>
                 <ul className={styles.tagList}>
-                  <li>
-                    <a href="#">project</a>
-                  </li>
-                  <li>
-                    <a href="#">love</a>
-                  </li>
-                  <li>
-                    <a href="#">technology</a>
-                  </li>
-                  <li>
-                    <a href="#">travel</a>
-                  </li>
-                  <li>
-                    <a href="#">restaurant</a>
-                  </li>
-                  <li>
-                    <a href="#">life style</a>
-                  </li>
-                  <li>
-                    <a href="#">design</a>
-                  </li>
-                  <li>
-                    <a href="#">illustration</a>
-                  </li>
+                  {["project", "love", "technology", "travel", "restaurant", "life style", "design", "illustration"].map((tag, i) => (
+                    <li key={i}>
+                      <a href="#">{tag}</a>
+                    </li>
+                  ))}
                 </ul>
               </aside>
 
-              {/* fivee-----  */}
-              <aside className={styles.instagramWidget}>
+              <aside className={styles.instagramWidget} data-aos="fade-up">
                 <h4 className={styles.widgetTitle}>Instagram Feeds</h4>
                 <ul className={styles.instagramRow}>
-                  <li>
-                    <a href="#">
-                      <img
-                        className="img-fluid"
-                        src="https://cdn.pixabay.com/photo/2016/11/19/12/15/bicycle-1838972_1280.jpg"
-                        alt="instagram"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img
-                        className="img-fluid"
-                        src="https://cdn.pixabay.com/photo/2023/05/13/19/36/woman-7991234_1280.jpg"
-                        alt="instagram"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img
-                        className="img-fluid"
-                        src="https://cdn.pixabay.com/photo/2016/11/21/18/07/automotive-1846910_1280.jpg"
-                        alt="instagram"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img
-                        className="img-fluid"
-                        src="https://cdn.pixabay.com/photo/2014/12/08/14/23/pocket-watch-560937_1280.jpg"
-                        alt="instagram"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img
-                        className="img-fluid"
-                        src="https://cdn.pixabay.com/photo/2015/04/07/14/27/camera-711025_1280.jpg"
-                        alt="instagram"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img
-                        className="img-fluid"
-                        src="https://cdn.pixabay.com/photo/2020/07/06/13/21/mercedes-benz-5377019_1280.jpg"
-                        alt="instagram"
-                      />
-                    </a>
-                  </li>
+                  {[
+                    "https://cdn.pixabay.com/photo/2016/11/19/12/15/bicycle-1838972_1280.jpg",
+                    "https://cdn.pixabay.com/photo/2023/05/13/19/36/woman-7991234_1280.jpg",
+                    "https://cdn.pixabay.com/photo/2016/11/21/18/07/automotive-1846910_1280.jpg",
+                    "https://cdn.pixabay.com/photo/2014/12/08/14/23/pocket-watch-560937_1280.jpg",
+                    "https://cdn.pixabay.com/photo/2015/04/07/14/27/camera-711025_1280.jpg",
+                    "https://cdn.pixabay.com/photo/2020/07/06/13/21/mercedes-benz-5377019_1280.jpg",
+                  ].map((src, i) => (
+                    <li key={i}>
+                      <a href="#">
+                        <img className="img-fluid" src={src} alt="instagram" />
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </aside>
 
-              {/* six ---  */}
-              <aside className={styles.newsletterWidget}>
+              <aside className={styles.newsletterWidget} data-aos="fade-up">
                 <h4 className={styles.widgetTitle}>Newsletter</h4>
                 <form action="#">
                   <div className={styles.formGroup}>
@@ -450,8 +304,6 @@ function BlogDetailes({ story_img }) {
                       className={styles.input}
                       placeholder="Enter email"
                       required
-                      //   value={null}
-                      //   onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <button className={styles.subscribeBtn} type="submit">

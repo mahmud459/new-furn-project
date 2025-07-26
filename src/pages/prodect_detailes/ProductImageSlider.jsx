@@ -79,7 +79,11 @@ function ProductDetailsSlider({ onProductChange }) {
       <div className="container">
         <div className="row">
           {/* Image Slider */}
-          <div className="col-md-6">
+          <div
+            className="col-md-6"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
             <div className={styles.productSliderImg}>
               <div className={styles.mainImage}>
                 <img
@@ -97,6 +101,7 @@ function ProductDetailsSlider({ onProductChange }) {
                     className={index === activeIndex ? styles.activeThumb : ""}
                     style={{ cursor: "pointer" }}
                     onClick={() => setActiveIndex(index)}
+                   
                   >
                     <img
                       src={item.image}
@@ -110,7 +115,11 @@ function ProductDetailsSlider({ onProductChange }) {
           </div>
 
           {/* Product Info */}
-          <div className="col-md-6 px-5">
+          <div
+            className="col-md-6 px-5"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <div className="s_product_text ps-5">
               <h3 className="fw-bold">{activeProduct.name}</h3>
               <h2 className={styles.prodect_pric}>${activeProduct.price}</h2>
@@ -127,7 +136,7 @@ function ProductDetailsSlider({ onProductChange }) {
                 {activeProduct.description}
               </p>
 
-              <div className="card_area">
+              <div className="card_area" data-aos="fade-up" data-aos-delay="200">
                 <div className="add_to_cart d-inline-block">
                   <button
                     className={styles.ProductDetailsSlider_add_bottun}
@@ -137,25 +146,26 @@ function ProductDetailsSlider({ onProductChange }) {
                   </button>
                 </div>
 
-                <div className={`${styles.prodect_detailes_social_icon} mt-3`}>
+                <div
+                  className={`${styles.prodect_detailes_social_icon} mt-3`}
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
                   <span>
-                     <a href="#" >
-                    <i className="fa-brands fa-facebook"></i>
-                  </a>
+                    <a href="#">
+                      <i className="fa-brands fa-facebook"></i>
+                    </a>
                   </span>
                   <span>
-                    <a href="#" >
-                    <i className="fa-brands fa-x-twitter"></i>
-                  </a>
+                    <a href="#">
+                      <i className="fa-brands fa-x-twitter"></i>
+                    </a>
                   </span>
                   <span>
-                     <a href="#">
-                    <i className="fa-brands fa-linkedin-in"></i>
-                  </a>
+                    <a href="#">
+                      <i className="fa-brands fa-linkedin-in"></i>
+                    </a>
                   </span>
-                 
-                  
-                 
                 </div>
               </div>
             </div>

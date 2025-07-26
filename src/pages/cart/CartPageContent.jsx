@@ -1,4 +1,3 @@
-// src/components/CartPageContent.jsx
 import React from "react";
 import { useCart } from "../../HomePage/context/CartContext";
 
@@ -11,18 +10,22 @@ function CartPageContent() {
       style={{
         marginTop: "150px",
       }}
+      data-aos="fade-up"
     >
       <h2
         className="text-center"
         style={{
           marginBottom: "100px",
         }}
+        data-aos="zoom-in"
       >
         Your Shopping Cart
       </h2>
 
       {cart.length === 0 ? (
-        <p className="text-muted text-center">Your cart is empty.</p>
+        <p className="text-muted text-center" data-aos="fade-up">
+          Your cart is empty.
+        </p>
       ) : (
         <>
           {cart.map((item) => (
@@ -31,10 +34,11 @@ function CartPageContent() {
               style={{
                 backgroundColor: "#f2e1d9",
               }}
+              key={item.id}
+              data-aos="fade-up"
             >
               <div
-                key={item.id}
-                className="d-flex justify-content-between align-items-center mb-4  mx-auto"
+                className="d-flex justify-content-between align-items-center mb-4 mx-auto"
               >
                 <img
                   src={item.image}
@@ -44,8 +48,12 @@ function CartPageContent() {
                     height: "100px",
                     objectFit: "cover",
                   }}
+                  data-aos="zoom-in"
                 />
-                <div className="d-flex flex-column flex-md-row g-5 align-items-center mt-3 mt-md-0 py-2">
+                <div
+                  className="d-flex flex-column flex-md-row g-5 align-items-center mt-3 mt-md-0 py-2"
+                  data-aos="fade-left"
+                >
                   <div className="d-flex align-items-center mb-4 mb-md-0 me-5">
                     <h5 className="mb-0 me-2">{item.name}:</h5>
                     <p className="mb-0">${item.price}</p>
@@ -80,8 +88,8 @@ function CartPageContent() {
             </div>
           ))}
 
-          <hr />
-          <h4 className="text-center">
+          <hr data-aos="fade-in" />
+          <h4 className="text-center" data-aos="zoom-in-up">
             Total: $
             {cart
               .reduce((acc, item) => acc + item.price * item.quantity, 0)

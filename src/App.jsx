@@ -1,3 +1,4 @@
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -14,8 +15,14 @@ import BlogDetailes from './blog/blog_detailes/BlogDetailes'
 import ContactUs from './contact/Contact'
 import MyAcount from './my_acount/MyAcount'
 // import CardSubmenu from './HomePage/Home/CardSubmenu'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <BrowserRouter basename="/new-furn-project">
       <Routes>

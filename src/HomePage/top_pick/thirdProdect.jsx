@@ -11,7 +11,7 @@ function ThirdProducts() {
 
     const products = [
         {
-            id: 7,
+            id: 9,
             name: "chair",
             description: "High quality metal chair.",
             price: 200,
@@ -19,7 +19,7 @@ function ThirdProducts() {
                 img11,
         },
         {
-            id: 8,
+            id: 10,
             name: "table",
             description: "High quality wooden table.",
             price: 300,
@@ -27,7 +27,7 @@ function ThirdProducts() {
                 img12,
         },
         {
-            id: 9,
+            id: 11,
             name: "sofa",
             description: "High quality fabric type sofa.",
             price: 400,
